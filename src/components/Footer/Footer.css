@@ -1,0 +1,17 @@
+.footer {
+  background-color: #27193d;
+  color: white;
+  padding: 10px;
+  margin: 0;
+}
+.footer button {
+  background-color: #d6b13f;
+  border: 2px solid #d6b13f;
+  color: white;
+  border-radius: 30px;
+  padding: 10px;
+}
+.footer button:hover {
+  background-color: transparent;
+  color: #d6b13f;
+}

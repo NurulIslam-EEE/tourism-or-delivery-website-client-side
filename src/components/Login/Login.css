@@ -1,0 +1,24 @@
+.login {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.812),
+      rgba(255, 255, 255, 0.821)
+    ),
+    url("https://fontawesome.com/images/tile-dol-icons-misc1-9e7a45cd39198652fcfa5f0eef4b1ed3.svg?vsn=d");
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-window {
+  background-color: white;
+  height: 80vh;
+  width: 300px;
+  box-shadow: 0 0 10px -2px;
+  padding-top: 30vh;
+}
+.login-window button {
+  background-color: transparent;
+}
+.google {
+  height: 40px;
+}
