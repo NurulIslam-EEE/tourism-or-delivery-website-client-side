@@ -13,8 +13,10 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import MyOrder from './components/MyOrder/MyOrder';
 import ManageAllOrders from './components/ManageAllOrders/ManageAllOrders';
 import AboutUs from './components/AboutUs/AboutUs';
+import Blogs from './components/Blogs/Blogs';
 
 function App() {
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -29,6 +31,9 @@ function App() {
           </Route>
           <Route path='/about'>
             <AboutUs></AboutUs>
+          </Route>
+          <Route path='/blogs'>
+            <Blogs></Blogs>
           </Route>
 
           <Route path='/login'>

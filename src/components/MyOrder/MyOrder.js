@@ -16,7 +16,7 @@ const MyOrder = () => {
         const procced = window.confirm('Are you sure,You Want to delete?');
         console.log(id);
         if (procced) {
-            fetch(`http://localhost:5000/myOrder/${id}`, {
+            fetch(`https://fathomless-ocean-50627.herokuapp.com/myOrder/${id}`, {
                 method: 'DELETE',
 
             })
@@ -33,19 +33,19 @@ const MyOrder = () => {
 
     return (
         <div>
-            {myOrder.length === 0 ? <h1 className='text-danger'>You did'nt place any order</h1> :
+            {myOrder.length === 0 ? <h1 className='text-danger'>You didn't place any order</h1> :
                 <div className="m-0 row">
 
                     {
                         myOrder.map(order =>
-                            <div className="col-md-4" key={order._id}>
+                            <div className="col-md-4" key={order?._id}>
                                 <Card className='m-3 text-start' style={{ width: '90%' }}>
-                                    <Card.Img variant="top" src={order.imgUrl} />
+                                    <Card.Img variant="top" src={order?.imgUrl} />
                                     <Card.Body>
-                                        <Card.Title>{order.title}</Card.Title>
+                                        <Card.Title>{order?.title}</Card.Title>
                                         <Card.Text>
 
-                                            Status:  {order.status}
+                                            Status:  {order?.status}
                                         </Card.Text>
                                         <Button onClick={() => handleDeleteOrder(order._id)} className='card-btn' variant="primary">Delete</Button>
 

@@ -1,0 +1,21 @@
+.place-order form {
+  box-shadow: 0 0 10px -2;
+}
+
+.place-order input,
+.place-order button,
+textarea {
+  width: 90%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.place-order button {
+  border: 2px solid #d6b13f;
+  background-color: #d6b13f;
+  color: white;
+}
+.place-order button:hover {
+  background-color: transparent;
+  color: #d6b13f;
+}

@@ -7,3 +7,16 @@ body {
 .logo {
   height: 50px;
 }
+.log-btn {
+  background-color: #50317f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  border: 2px solid #50317f;
+}
+.log-btn:hover {
+  background-color: transparent;
+  color: #d6b13f;
+  border: 2px solid #d6b13f;
+}

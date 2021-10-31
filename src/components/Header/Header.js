@@ -8,7 +8,7 @@ import './Header.css'
 const Header = () => {
     const { user, logOut } = useFirebase();
     return (
-        <Navbar fixed="top" className='m-0' bg="transparent" expand="lg">
+        <Navbar className='m-0' bg="transparent" expand="lg">
             <Container fluid>
                 <img className='logo' src='https://i.ibb.co/nmYxyyB/logo-dark.png' alt="" />
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -20,6 +20,7 @@ const Header = () => {
                     >
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
+                        <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
 
 
                         {user.email ? <Nav.Link as={Link} to="/myOrder" > My Orders</Nav.Link> : ''}
@@ -27,8 +28,8 @@ const Header = () => {
                         {user.email ? <Nav.Link as={Link} to="/addTours" > Add Tour</Nav.Link> : ''}
                         <Nav.Link as={Link} to='/home'>{user?.displayName}</Nav.Link>
 
-                        {!user.email ? <Nav.Link as={Link} to="/login" > Login</Nav.Link> :
-                            <button onClick={logOut}>Logout</button>}
+                        {!user.email ? <Nav.Link as={Link} to="/login" ><button className='log-btn'>Login</button> </Nav.Link> :
+                            <button className='log-btn' onClick={logOut}>Logout</button>}
 
                     </Nav>
 

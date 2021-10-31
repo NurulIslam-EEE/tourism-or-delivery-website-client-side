@@ -4,7 +4,8 @@ import './AboutUs.css';
 const AboutUs = () => {
     return (
         <div className='row m-0 p-3'>
-            <h1>ABOUT US</h1>
+            <h3>ABOUT US</h3>
+            <h1 className='about-title'>ROYAL ADVENTURE TRAVEL AND TOURISM</h1>
             <p className='text-start'>It is indeed a great pleasure to introduce to you, Royal Tours and Travels is a long-established and exciting Travel, Tours & Adventure Desert Safari Operator with the emphasis on quality, innovation and customer service delivery.
 
                 Royal Tours and Travels are fully equipped to cater to all requirements related to Hotel Accommodation, Visas, Inter Emirates City Tours, Desert Safari Dubai, Musandam Island Trips, Hatta Mountain Safari , Water Sports, Fishing Trips & Special Services viz. Golf, Scuba Diving, Helicopter Tours, Dhow Cruise Dinner, Airport meet & assist, Multilingual guides etc provide exciting and unique programmes & packages that are totally flexible and can be adapted to suit the needs of all of our clients

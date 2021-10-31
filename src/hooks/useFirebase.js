@@ -5,6 +5,7 @@ import initializeAuthentication from "../Firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
+    const [packages, setPackages] = useState([]);
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true);
 
@@ -46,7 +47,8 @@ const useFirebase = () => {
         signInUsingGoogle,
         logOut,
         loading,
-        setLoading
+        setLoading,
+        packages, setPackages
     }
 
 }

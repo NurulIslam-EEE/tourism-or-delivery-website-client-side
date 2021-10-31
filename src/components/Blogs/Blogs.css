@@ -1,0 +1,36 @@
+.blog-card,
+.catagories {
+  box-shadow: 0 0 10px -3px;
+}
+.blog-btn {
+  width: 40%;
+  margin-top: 3%;
+  color: #50317f;
+  font-weight: 700;
+}
+.blog-text {
+  margin-top: 3%;
+}
+.blog-btn button {
+  background-color: #50317f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  border: 2px solid #50317f;
+}
+.blog-btn button:hover {
+  background-color: transparent;
+  color: #d6b13f;
+  border: 2px solid #d6b13f;
+}
+.catagories h5 {
+  padding: 10px;
+
+  margin-top: 0;
+  border-radius: 5px;
+}
+.catagories h5:hover {
+  background-color: #50317f;
+  color: white;
+}

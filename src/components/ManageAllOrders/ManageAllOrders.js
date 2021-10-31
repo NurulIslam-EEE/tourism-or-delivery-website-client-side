@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import useFirebase from '../../hooks/useFirebase';
 
 const ManageAllOrders = () => {
+    const { user } = useFirebase({});
     const [allOrder, setAllOrder] = useState([]);
     const [depend, setDepend] = useState('');
     useEffect(() => {
-        fetch('http://localhost:5000/manageAllOrder')
+        fetch('https://fathomless-ocean-50627.herokuapp.com/manageAllOrder')
             .then(res => res.json())
             .then(data => setAllOrder(data));
     }, [depend]);
@@ -14,7 +16,7 @@ const ManageAllOrders = () => {
         const proceed = window.confirm('Are you sure,You Want to delete?');
         console.log(id);
         if (proceed) {
-            fetch(`http://localhost:5000/myOrder/${id}`, {
+            fetch(`https://fathomless-ocean-50627.herokuapp.com/myOrder/${id}`, {
                 method: 'DELETE',
 
             })
@@ -33,9 +35,9 @@ const ManageAllOrders = () => {
     const handleStatus = (id) => {
 
         setDepend(id);
-        const updateStatus = { status: 'approved' }
+        const updateStatus = { status: 'Approved' }
 
-        fetch(`http://localhost:5000/manageAllOrder/${id}`, {
+        fetch(`https://fathomless-ocean-50627.herokuapp.com/manageAllOrder/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +53,7 @@ const ManageAllOrders = () => {
 
     }
     return (
-        <div className="row p-3 m-0">
+        <div className="p-3 m-0 row">
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -59,13 +61,15 @@ const ManageAllOrders = () => {
                         <th>Order Details</th>
                     </tr>
                 </thead>
-                {allOrder.map((order, index) => (
+                {allOrder?.map((order, index) => (
                     <tbody>
                         <tr>
                             <td>{index}</td>
                             <td className='text-start'>
-                                Package Name:{order.title} <br />
-                                Status:{order.status} <br />
+                                Package Name:{order?.title} <br />
+                                Customer: {user?.displayName} <br />
+                                Status:{order?.status} <br />
+
                                 <button onClick={() => handleStatus(order._id)}>Approve</button>
                                 <button onClick={() => handleDeleteOrder(order._id)}>Delete</button>
                             </td>

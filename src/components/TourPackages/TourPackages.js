@@ -2,10 +2,13 @@ import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
 import { Card, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../hooks/useFirebase';
 import './TourPackages.css'
 
 const TourPackages = () => {
-    const [packages, setPackages] = useState([]);
+    // const [packages, setPackages] = useState([]);
+    const { packages, setPackages } = useFirebase();
+
 
     useEffect(() => {
         fetch('https://fathomless-ocean-50627.herokuapp.com/tourPackages')
@@ -28,7 +31,9 @@ const TourPackages = () => {
                                         <Card.Title>{pkg.title}</Card.Title>
                                         <Card.Text>
                                             {pkg.description}
+                                            <p className='mt-2 ext-muted'><i class="fas fa-map-marker-alt"></i> Pick-up included in Abu Dhabi</p>
                                         </Card.Text>
+
                                         <Link to={`/placeOrder/${pkg._id}`}><Button className='card-btn' variant="primary">Book Now</Button></Link>
 
                                     </Card.Body>
