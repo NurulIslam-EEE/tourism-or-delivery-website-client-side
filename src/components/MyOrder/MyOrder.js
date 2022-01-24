@@ -1,16 +1,23 @@
 import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
+import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 
 const MyOrder = () => {
-    const { user } = useFirebase();
+    const { user } = useAuth();
     const [myOrder, setMyOrder] = useState([]);
+    const [orderLength, setOrderLength] = useState(false);
     useEffect(() => {
+        setOrderLength(false)
         fetch(`https://fathomless-ocean-50627.herokuapp.com/myOrder/${user?.email}`)
             .then((res) => res.json())
-            .then((data) => setMyOrder(data));
-    }, [user.email]);
+            .then((data) => {
+                setMyOrder(data)
+                setOrderLength(true)
+            });
+
+    }, [user?.email]);
 
     const handleDeleteOrder = (id) => {
         const procced = window.confirm('Are you sure,You Want to delete?');
@@ -33,7 +40,7 @@ const MyOrder = () => {
 
     return (
         <div>
-            {myOrder.length === 0 ? <h1 className='text-danger'>You didn't place any order</h1> :
+            {myOrder?.length === 0 ? <h1 className='text-danger'>You didn't place any order</h1> :
                 <div className="m-0 row">
 
                     {

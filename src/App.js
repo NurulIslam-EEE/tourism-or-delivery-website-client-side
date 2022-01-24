@@ -14,49 +14,51 @@ import MyOrder from './components/MyOrder/MyOrder';
 import ManageAllOrders from './components/ManageAllOrders/ManageAllOrders';
 import AboutUs from './components/AboutUs/AboutUs';
 import Blogs from './components/Blogs/Blogs';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
-  
+
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header></Header>
-        <Switch>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route path='/about'>
+              <AboutUs></AboutUs>
+            </Route>
+            <Route path='/blogs'>
+              <Blogs></Blogs>
+            </Route>
 
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
-          <Route path='/about'>
-            <AboutUs></AboutUs>
-          </Route>
-          <Route path='/blogs'>
-            <Blogs></Blogs>
-          </Route>
-
-          <Route path='/login'>
-            <Login></Login>
-          </Route>
-          <PrivateRoute path='/placeOrder/:id'>
-            <PlaceOrder></PlaceOrder>
-          </PrivateRoute>
-          <Route path='/myOrder'>
-            <MyOrder></MyOrder>
-          </Route>
-          <Route path='/manageOrder'>
-            <ManageAllOrders></ManageAllOrders>
-          </Route>
-          <Route path='/addTours'>
-            <AddTourPackages></AddTourPackages>
-          </Route>
-          <Route path='*'>
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </BrowserRouter>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            <PrivateRoute path='/placeOrder/:id'>
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
+            <Route path='/myOrder'>
+              <MyOrder></MyOrder>
+            </Route>
+            <Route path='/manageOrder'>
+              <ManageAllOrders></ManageAllOrders>
+            </Route>
+            <Route path='/addTours'>
+              <AddTourPackages></AddTourPackages>
+            </Route>
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

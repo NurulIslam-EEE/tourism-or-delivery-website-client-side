@@ -10,3 +10,33 @@
 .about-title {
   color: #50317f;
 }
+.about-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.203)),
+    url("http://www.royaladventuretourism.com/files/2016-10/bg-1.jpg");
+  height: 50vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.about-text {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+}
+.about-text2 {
+  color: white;
+  font-size: 40px;
+}
+.about-text3 {
+  color: #d6b13f;
+  position: relative;
+}
+.about-text3 span {
+  background: #d6b13f;
+  position: absolute;
+  height: 5px;
+  width: 130px;
+  top: 35px;
+  left: 45%;
+}

@@ -20,3 +20,21 @@ body {
   color: #d6b13f;
   border: 2px solid #d6b13f;
 }
+.nav-bg {
+  background-color: darkturquoise !important;
+  display: none;
+}
+.nav-bg2 {
+  display: block;
+  background-color: #f6f7f8;
+}
+.nav-top {
+  display: flex;
+  justify-content: space-around;
+  height: 5vh;
+  align-items: center;
+  color: #50317f;
+  font-weight: 700;
+  padding-top: 2vh;
+  background-color: #f6f7f8;
+}

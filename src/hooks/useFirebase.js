@@ -29,7 +29,7 @@ const useFirebase = () => {
             setLoading(false);
         });
         return unsubscribe;
-    }, [])
+    }, [auth])
 
 
     const logOut = () => {
